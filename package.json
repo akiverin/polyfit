@@ -1,0 +1,60 @@
+{
+  "name": "frontend",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "npm-run-all --parallel -c lint:*",
+    "lint:stylelint": "stylelint **/*.vue",
+    "lint:eslint": "eslint --ext .vue src/",
+    "fix": "npm-run-all --parallel -c fix:*",
+    "fix:stylelint": "stylelint --fix **/*.vue",
+    "fix:eslint": "eslint --fix --ext .vue src",
+    "prepare": "cd .. && husky install"
+  },
+  "dependencies": {
+    "@formkit/auto-animate": "^1.0.0-beta.5",
+    "axios": "^0.27.2",
+    "chart.js": "^3.9.1",
+    "core-js": "^3.8.3",
+    "npm-run-all": "^4.1.5",
+    "velocity": "^0.7.3",
+    "velocity-animate": "^1.5.2",
+    "vue": "^2.6.14",
+    "vue-chartjs": "^4.1.2",
+    "vue-router": "^3.6.5",
+    "vue-scrollto": "^2.20.0",
+    "vuex": "^3.6.2"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.16",
+    "@babel/eslint-parser": "^7.12.16",
+    "@vue/cli-plugin-babel": "~5.0.0",
+    "@vue/cli-plugin-eslint": "~5.0.0",
+    "@vue/cli-service": "~5.0.0",
+    "@vue/runtime-dom": "latest",
+    "eslint": "^7.32.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "postcss-html": "^1.5.0",
+    "sass-loader": "^13.2.0",
+    "stylelint": "^14.14.0",
+    "stylelint-config-recommended-vue": "^1.4.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-order": "^5.0.0",
+    "vue-template-compiler": "^2.6.14"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ],
+  "lint-staged": {
+    "*.vue": [
+      "npm run lint:stylelint",
+      "npm run lint:eslint"
+    ]
+  }
+}
